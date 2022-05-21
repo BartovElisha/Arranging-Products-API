@@ -1,0 +1,136 @@
+{
+  "uuid": "35020087-ae47-4dbb-966c-a47a89fcf3eb",
+  "lastMigration": 19,
+  "name": "Products",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "11c43c42-adc2-4fdc-b0a7-9aea24be24db",
+      "documentation": "Shop",
+      "method": "get",
+      "endpoint": "shop",
+      "responses": [
+        {
+          "uuid": "8a762f20-1cf8-4ad7-8680-5ecfcd31170e",
+          "body": "{\n  \"shopName\":\"Super Market 24/7\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7f915648-e154-435d-9195-7e19a54744e2",
+      "documentation": "Products",
+      "method": "get",
+      "endpoint": "products",
+      "responses": [
+        {
+          "uuid": "d904d64e-7bad-48c5-99b2-a56c86e2ace9",
+          "body": "{\n  \"products\": [\n    {\"productName\":\"Milk\",\n     \"productPrice\":2\n    },\n    {\n     \"productName\":\"Bread\",\n     \"productPrice\":3\n    },\n    {\n     \"productName\":\"Banana\",\n     \"productPrice\":4\n    },\n    {\n     \"productName\":\"watermelon\",\n     \"productPrice\":4\n    },\n    {\n     \"productName\":\"Meat\",\n     \"productPrice\":10\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e0a9138a-d1d9-4003-bf95-97aebdfc3bd2",
+      "documentation": "Discount",
+      "method": "get",
+      "endpoint": "discount",
+      "responses": [
+        {
+          "uuid": "15fe392b-b5ea-46be-aae3-b83ab0564289",
+          "body": "{\n  \"productName\":\"Meat\"\n  \"discount\":50\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "",
+              "value": "",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}

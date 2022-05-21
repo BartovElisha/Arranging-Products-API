@@ -1,0 +1,16 @@
+body {
+  margin: auto;
+  background-color: bisque;
+}
+
+.container {
+  margin: auto;
+}
+
+p {
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  color: blue;
+}
+/*# sourceMappingURL=style.css.map */
