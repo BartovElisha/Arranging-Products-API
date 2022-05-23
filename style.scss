@@ -8,9 +8,25 @@ body {
     margin: auto;
 }
 
-p {
+h1 {
     margin: auto;
     text-align: center;
     font-size: 30px;
     color: blue;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid gray;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

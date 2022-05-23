@@ -10,8 +10,8 @@ const delayMs = msec => {
     });
 }
 
-async function getShopName() {
-    console.log("Fetching started...");
+async function getDataFromServer() {
+    console.log("Shop Name Fetching started...");
 
     try {
         await delayMs(2000);
@@ -26,12 +26,23 @@ async function getShopName() {
     finally {
         console.log("Done");
     }    
+
+    /////////////////////////////////////////////////
+    console.log("Products Fetching started...");
+    
+    try {
+        await delayMs(2000);
+        let response = await fetch(productsUrl);  
+        let data = await response.json();
+        
+        showShopProducts(data);
+    }
+    catch (error) {
+        console.log("Error: ",error);
+    }
+    finally {
+        console.log("Done");    
+    }
 }
 
-async function getProducts() {
-
-}
-
-
-getShopName();
-getProducts();
+getDataFromServer();

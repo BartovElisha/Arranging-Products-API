@@ -40,7 +40,7 @@
       "responses": [
         {
           "uuid": "d904d64e-7bad-48c5-99b2-a56c86e2ace9",
-          "body": "{\n  \"products\": [\n    {\"productName\":\"Milk\",\n     \"productPrice\":2\n    },\n    {\n     \"productName\":\"Bread\",\n     \"productPrice\":3\n    },\n    {\n     \"productName\":\"Banana\",\n     \"productPrice\":4\n    },\n    {\n     \"productName\":\"watermelon\",\n     \"productPrice\":4\n    },\n    {\n     \"productName\":\"Meat\",\n     \"productPrice\":10\n    }\n  ]\n}",
+          "body": "{\n  \"products\":[\n    {\"productName\":\"Milk\",\n     \"productPrice\":2\n    },\n    {\n     \"productName\":\"Bread\",\n     \"productPrice\":3\n    },\n    {\n     \"productName\":\"Banana\",\n     \"productPrice\":4\n    },\n    {\n     \"productName\":\"Watermelon\",\n     \"productPrice\":2\n    },\n    {\n     \"productName\":\"Cheese\",\n     \"productPrice\":10\n    },\n    {\n     \"productName\":\"Meat\",\n     \"productPrice\":20\n    }\n  ]  \n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
