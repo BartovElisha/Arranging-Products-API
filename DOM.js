@@ -28,6 +28,7 @@ function showShopProducts(data) {
     let tableHeaderRow1Element = document.createElement("tr");
     tableElement.appendChild(tableHeaderRow1Element);
 
+    // Create Table Headers
     let tableHeaderCol1Element = document.createElement("th");
     tableHeaderCol1Element.innerText = "Item";
     tableHeaderRow1Element.appendChild(tableHeaderCol1Element);
@@ -44,6 +45,7 @@ function showShopProducts(data) {
     tableHeaderCol4Element.innerText = "Product Discount [%]";
     tableHeaderRow1Element.appendChild(tableHeaderCol4Element);
 
+    // Fill table by Data from Mockoon server.
     data.products.forEach(function(item,index) {
         let tableDataRowElement = document.createElement("tr");
         tableElement.appendChild(tableDataRowElement);
@@ -61,7 +63,22 @@ function showShopProducts(data) {
         tableDataRowElement.appendChild(tableDataCol3Element);
 
         let tableDataCol4Element = document.createElement("td");
-        tableDataCol4Element.innerText = "Press to check Discount";
         tableDataRowElement.appendChild(tableDataCol4Element);
+
+        // Create Button
+        let buttonElement = document.createElement("button");
+        buttonElement.innerText = "Check";
+        buttonElement.setAttribute("type","button");
+        buttonElement.setAttribute("id",`button-${index+1}`);
+        tableDataCol4Element.appendChild(buttonElement);
+
+        // Run callback function to check if product have a discount
+        document.getElementById(`button-${index+1}`).addEventListener("click", function() {             
+            checkProductDiscount(item.productName); 
+        });
     });
+}
+
+function showProductDiscount(data) {
+    
 }

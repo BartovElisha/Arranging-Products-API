@@ -15,9 +15,10 @@ h1 {
 }
 
 table {
+  margin: 50px auto;
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
 }
 
 td, th {

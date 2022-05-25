@@ -45,4 +45,33 @@ async function getDataFromServer() {
     }
 }
 
+async function checkProductDiscount(productName) {
+    console.log("Product Name is: ",productName);
+
+    let productData = {
+        "productName": productName
+    };
+
+    try {
+        await delayMs(1000);
+        let response = await fetch(discountUrl,{
+            method: "POST",
+            body: JSON.stringify(productData),
+            headers: {"Content-type": "application/json; charset=UTF-8"}
+        });
+        
+        let data = await response.json();
+        
+        showProductDiscount(data);
+        console.log(`Discount of Product ${productName} is: ${data.discountInfo}%`); 
+        alert(`Discount of Product ${productName} is: ${data.discountInfo}%`);        
+    }
+    catch (error) {
+        console.log("Error: ",error);
+    }
+    finally {
+        console.log("Done");
+    }
+}
+
 getDataFromServer();

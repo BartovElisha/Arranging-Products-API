@@ -60,23 +60,43 @@
     {
       "uuid": "e0a9138a-d1d9-4003-bf95-97aebdfc3bd2",
       "documentation": "Discount",
-      "method": "get",
+      "method": "post",
       "endpoint": "discount",
       "responses": [
         {
           "uuid": "15fe392b-b5ea-46be-aae3-b83ab0564289",
-          "body": "{\n  \"productName\":\"Meat\"\n  \"discount\":50\n}",
+          "body": "{\n  \"discountInfo\": 0\n}",
           "latency": 0,
           "statusCode": 200,
-          "label": "",
+          "label": "Response Fail",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "14d7097f-2637-46ae-9ce5-b847fc888a15",
+          "body": "{\n  \"discountInfo\": 50\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response succeeded",
           "headers": [],
           "filePath": "",
           "sendFileAsBody": false,
           "rules": [
             {
               "target": "body",
-              "modifier": "",
-              "value": "",
+              "modifier": "productName",
+              "value": "Meat",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "productName",
+              "value": "Milk",
               "operator": "equals"
             }
           ],
